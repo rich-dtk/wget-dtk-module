@@ -1,0 +1,73 @@
+---
+module: utils/wget
+version: master
+component_defs:
+  wget:
+    external_ref:
+      puppet_class: wget
+    attributes:
+      version:
+        type: string
+  fetch:
+    external_ref:
+      puppet_definition: wget::fetch
+    attributes:
+      name:
+        type: string
+        required: true
+      destination:
+        type: string
+        required: true
+      source:
+        type: string
+      timeout:
+        type: string
+      verbose:
+        type: boolean
+      redownload:
+        type: boolean
+      nocheckcertificate:
+        type: boolean
+      no_cookies:
+        type: boolean
+      execuser:
+        type: string
+      user:
+        type: string
+      password:
+        type: string
+      headers:
+        type: string
+      cache_dir:
+        type: string
+      cache_file:
+        type: string
+      flags:
+        type: string
+  authfetch:
+    external_ref:
+      puppet_definition: wget::authfetch
+    attributes:
+      name:
+        type: string
+        required: true
+      destination:
+        type: string
+        required: true
+      user:
+        type: string
+        required: true
+      source:
+        type: string
+      password:
+        type: string
+      timeout:
+        type: string
+      verbose:
+        type: boolean
+      redownload:
+        type: boolean
+      nocheckcertificate:
+        type: boolean
+      execuser:
+        type: string
